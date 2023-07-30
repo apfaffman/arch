@@ -1,0 +1,6 @@
+nvidia
+nvidia-dkms
+nvidia-lts
+nvidia-prime
+nvidia-settings
+lib32-nvidia-utils

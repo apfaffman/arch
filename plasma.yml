@@ -1,0 +1,46 @@
+---
+hostname: archie
+username: apfaffman
+
+regional:
+  locale: en_US.UTF-8
+  timezone: America/Los_Angeles
+  keymap: us
+
+partitioning:
+  disk: /dev/vda
+  # Choose either ext4 or btrfs
+  filesystem: btrfs
+  # If set to true, disk is encrypted with LVM-on-LUKS
+  encrypted: false
+  # Swapfile size in MiB. Set to zero to disable swap
+  swap: 2048
+
+provisioning:
+  # Desktop environment. Options: none, gnome, plasma, xfce, mate
+  desktop: plasma
+  # Install appropriate desktop extras like gnome-extra, kde-applications, xfce4-goodies
+  desktop-extras: true
+  # Choose to install the Plymouth boot-splash
+  plymouth: true
+  # Install a collection of extra fonts for the desktop
+  fonts: true
+  # Install bluetooth and bluetooth audio support
+  bluetooth: false
+  # List of packages to install
+  packages:
+    - git
+    - base-devel
+    - neofetch
+    - tmux
+    - lynx
+
+architect:
+  # Choose the branch of Architect to clone during install
+  branch: master
+  # Option to disable the provisioning stage
+  disable_stage3: false
+  # Enable "set -x" in scripts for debugging
+  debug: false
+  # Unmount drives and reboot after install
+  reboot: true
